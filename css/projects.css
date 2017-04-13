@@ -1,0 +1,15 @@
+.project-title {
+  font-size: 20px;
+  display: block;
+  margin-top: 50px;
+}
+
+.project img {
+  border: 1px #ccc solid;
+  margin-top: 25px;
+}
+
+.project .description, .project img {
+  width: 350px;
+  max-width: 100%;
+}

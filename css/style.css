@@ -1,0 +1,89 @@
+body {
+  color: #666;
+  padding: 0 50px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.pry-color {
+  color: rgb(120, 194, 235);
+}
+
+.logo {
+  display: inline-block;
+  color: #777;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+b {
+  color: #000;
+}
+
+a {
+  color: black;
+}
+
+header ul {
+  display: inline-block;
+}
+
+header li {
+  display: inline-block;
+  list-style: none;
+  margin: 15px 10px;
+}
+
+header li a {
+  text-decoration: none;
+}
+
+header li a:hover, header li a.active {
+  text-decoration: underline;
+}
+
+.love-icon {
+  vertical-align: middle;
+  width: 20px;
+}
+
+.stroke {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+img.profile-image {
+  border-radius: 50%;
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 50px;
+  padding: 30px 70px 0px 30px;
+  text-align: center;
+  border-left: 1px #efefef solid;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+@media (max-width: 500px) {
+  header ul, header li  {
+    margin: 0px 13px 10px 0px;
+    text-align: left;
+    padding: 0;
+  }
+
+  header ul {
+    display: block;
+  }
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+}
