@@ -1,0 +1,22 @@
+.post-content, .posts {
+  width: 70%;
+  word-wrap: break-word;
+  line-height: 25px;
+}
+
+.post-content pre {
+  overflow-x: scroll;
+  padding-top: 20px;
+  background: black;
+  color: white;
+}
+
+.italic {
+  font-style: italic;
+}
+
+blockquote {
+  border-left: 3px #ccc solid;
+  margin-left: 0;
+  padding-left: 40px;
+}

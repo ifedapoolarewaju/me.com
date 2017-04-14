@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ifedapo Olarewaju</title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/blog.css">
+  <link rel="icon" href="../imgs/ifedapo.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h2 class="logo">Ifedapo.com</h2>
+
+     <ul>
+      <li>
+        <a href="../index.html">ABOUT</a>
+      </li>
+      <li>
+        <a href="../blog.html" class="active">BLOG</a>
+      </li>
+      <li>
+        <a href="../projects.html">PROJECTS</a>
+      </li>
+    </ul>
+  </header>
+  <div>
+    <h2>Data vs Information (Another look) - Monday, 25 July 2016</h2>
+    <div class="post-content">
+      I was having a conversation with my old friend Solomon when this hit me. For the past couple days before then, the only language we spoke/joked in was a blend of English and excessive computing/Data Science Jargons. Then the thought of how there isn't much difference between <b>Data</b> and <b>Information</b> kept ringing in my head.
+      <br>
+      <br>
+      I went ahead to do some research on both terms
+      <br>
+      <br>
+      <blockquote>
+      Data
+      Think of data as a "raw material" - it needs to be processed before it can be turned into something useful. Hence the need for "data processing". Data comes in many forms - numbers, words, symbols. Data relates to transactions, events and facts. On its own - it is not very useful.
+      </blockquote>
+      <br>
+      <br>
+      <blockquote>
+      Information is data that has been processed in such a way as to be meaningful to the person who receives it.
+      </blockquote>
+      <p class="small-text italic">(excerpts from <a href="http://www.tutor2u.net/business/reference/the-difference-between-data-and-information" target="_blank">http://www.tutor2u.net/business/reference/the-difference-between-data-and-information</a>)</p>
+      <br>
+      Going by the definition of Data( from above and mostly everywhere else you look), Ideal examples of Data would be:
+      <br>
+      <br>
+
+      <pre>
+        2, 68970, 10000110, "yes I can go to school".
+      </pre>
+
+      <br>
+      <br>
+      Then the next point of thought would be how to process the data examples given above into Information by feeding them into a Computer/Data processor. But in actual fact what processing can be done with the mere data: 
+      <pre>
+        2, 68970, 10000110, "yes I can go to school"?
+      </pre>
+      <br>
+      <br>
+      They are all just a useless/meaningless set of values that cannot be acted upon both as humans and as machines/computers to produce anything meaningful because they lack context.
+      <br>
+      <br>
+      2 what?
+      68970 what?
+      10000110 what?
+      "yes I can go to school" - who are you?
+      <br>
+       Scenario:
+      <br>
+      <br>
+      Say we have a computer program that does the simplest job such as formatting Contact details of users in a readable form.
+      <br>
+      <br>
+
+      <pre>
+        Func contactDetails (str name, int age, str email, str address)
+        Name: {Insert name here}
+        Age: {Insert age here} Years
+        Email: {Insert email here}
+        Address: {Insert address here}
+      </pre>
+
+      <br>
+      <br>
+      Running the program in the following ways will fail:
+      <pre>
+        contactDetails(2, 68970, 10000110, "yes I can go to school")
+        Output: Invalid arguments
+        
+
+        contactDetails(2)
+        Output: Invalid arguments
+        
+
+        contactDetails("Ifedapo Olarewaju")
+        Output: Invalid arguments
+        
+
+        contactDetails("Ifedapo Olarewaju", "ifedapoolarewaju@gmail.com", 89, "55, Joseph Harrison Street, Lagos Nigeria")
+        Output: Invalid arguments
+      </pre>
+      <br>
+      <blockquote cite="http://www.computerhope.com/issues/ch001629.htm">
+        Computers typically read data, but it is not necessarily something that a computer actually understands.
+      </blockquote>
+      <p class="small-text italic"><a href="http://www.computerhope.com/issues/ch001629.htm" target="_blank">http://www.computerhope.com/issues/ch001629.htm</a></p>
+
+       If the Computer Program does not infact need to understand the data fed to it, then none of the executions above would fail.
+      <br>
+      <br>
+      The executions above fail infact, because the program is being fed the wrong data. But how can data be wrong if it's meaningless as we propose. This must mean what we are feeding the computer is not mere data. We are feeding the computer Information instead. Thus the wrong information would either break the execution or lead to a falsy output.
+      <br>
+      <br>
+      Merely looking at the program definition
+      <br>
+      <br>
+      <pre>
+        Func contactDetails (str name, int age, str email, str address)
+      </pre>
+
+      <br>
+      <br>
+      It becomes apparent that the function does not only require Data, It requires data put into context.
+      <br>
+      <br>
+      The first argument of the function must be a string by definition and must be the name of the user. That's equivalent to the computer program asking you "What's the name of the user" and you respond with "The User's name is Ifedapo Olarewaju".
+      <br>
+      <br>
+      "The User's name is Ifedapo Olarewaju": Now is that Data or Information? That sounds a lot like information to me. Because at that point when you pass the argument, then the program already knows the user's name and information has been passed by putting the data "Ifedapo Olarewaju" into context.
+      <br>
+      <br>
+      Moving to the second argument; It must be an Integer number, because the program knows what it requires is the age of a user which must be a number. 
+      <br>
+      <p class="small-text italic">
+        (NB saying the program "knows" just means whoever wrote the program knows hence made the program intelligent enough to apply certain rules, such as requiring a formatted form of input).
+      </p>
+      <br>
+      <br>
+      Which means passing the value "foo" into the second argument would immediately fail because it is wrong information. Note again that Data can not be wrong by definition, because it is meaningless in it's natural form. This again proves that the program requires not just data, it requires a particular type of data. It's like the program asks you "What's Ifedapo Olarewaju's age" and you respond with "foo". And then the program says "No you retard! The age should be a number not a string".
+      <br>
+      <br>
+      This goes for all the other arguments of the function. Knowing what form of input the program requires will then enable us run it in the right form like so:
+      <br>
+      <br>
+      <pre>
+        contactDetails("Ifedapo Olarewaju", 95, "ifedapoolarewaju@gmail.com", "50, James Harrison Street.")
+
+        Name: Ifedapo Olarewaju
+        Age: 95 Years
+        Email: ifedapoolarewaju@gmail.com
+        Address: 50, James Harrison Street.
+      </pre>
+      <br>
+      <br>
+       Look at it this way, The program had placeholders for you to input name, age, email and address into it. Which means he who executes the program has to know the name of the user, the age, her email and her address. Now is that data or information? Sounds like information to me.
+
+       Another thing to note is the functionality of the program. " formatting Contact details of users in a readable form". If the output which is formatted data is regarded as information. And the program itself requires to be executed in the following manner/format contactDetails (str name, int age, str email, str address). Then it means the program in itself also needs formatted input(which in essence is information) to produce formatted output(which in essence is also information).
+       <br>
+       <br>
+       Conclusion
+       <br>
+       <br>
+       In conclusion, this article does not redefine Data. Instead it redefines Information. Information is not processed data. Mere Data cannot be processed to produce anything meaningful as it is meaningless and hence useless. A computer therefore can only process information to produce Information. However, knowing that Data only becomes meaningful (thus information) when put into context. This would mean a better definition for information could be:
+      <br>
+      <br>
+      <b>Information is Data provided with context.</b>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <img src="../imgs/ifedapo.png" class="profile-image" width="100px">
+    <h3>Ifedapo Olarewaju</h3>
+    <p>Software Engineer.</p>
+    <br>
+    <p class="small-text">connect with me no social media</p>
+    <a href="https://github.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="../imgs/github.png" width="30px"></a>
+    <a href="https://twitter.com/teddyskillz2" target="_blank" class="socio-account"><img src="../imgs/twitter.png" width="30px"></a>
+    <a href="https://linkedin.com/in/ifedapoolarewaju" target="_blank" class="socio-account"><img src="../imgs/linkedin.png" width="30px"></a>
+    <a href="https://instagram.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="../imgs/instagram.png" width="30px"></a>
+    <p>Or <a href="mailto:ifedapoolarewaju@gmail.com">send me a mail</a></p>
+  </div>
+
+  <footer>
+    &copy; 2017 Ifedapo Olarewaju
+  </footer>
+</body>
+</html>
