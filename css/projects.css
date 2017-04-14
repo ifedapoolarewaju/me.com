@@ -1,3 +1,7 @@
+.projects {
+  padding-left: 5%;
+}
+
 .project-title {
   font-size: 20px;
   display: block;
@@ -5,11 +9,11 @@
 }
 
 .project img {
-  border: 1px #ccc solid;
+  border: 2px #ccc solid;
   margin-top: 25px;
 }
 
 .project .description, .project img {
-  width: 350px;
+  width: 380px;
   max-width: 100%;
 }
