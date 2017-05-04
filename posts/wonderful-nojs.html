@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ifedapo Olarewaju</title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/blog.css">
+  <link rel="icon" href="/imgs/ifedapo.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h2 class="logo">Ifedapo.com</h2>
+
+     <ul>
+      <li>
+        <a href="/">ABOUT</a>
+      </li>
+      <li>
+        <a href="/blog" class="active">BLOG</a>
+      </li>
+      <li>
+        <a href="/projects">PROJECTS</a>
+      </li>
+    </ul>
+  </header>
+  <div>
+    <h2>Things that you can do with No.js - Thursday, 4 May 2017</h2>
+    <div class="post-content">
+      A while back I released a javascript library (<a href="http://nojs.io" target="_blank">no.js</a>) that helps you do simple DOM manipulations without the need to write a single line of javascript.
+      <br>
+      <br>
+      This came about because it began to feel embarrassing that I couldn't get away with implementing simple interactive feedbacks on a page without runnning to a javascript file to either hide this or show that.
+      <br>
+      <br>
+      Also it began to feel repetitive, basically having recurring code with similar patterns. And even though they act on different html elements it still feels quite detestable.
+      <br>
+      <br>
+      <br>
+      <div>
+        <img src="https://s-media-cache-ak0.pinimg.com/564x/f1/bf/fa/f1bffaef88be8439608c2ad0f2a58a8a.jpg" width="60%">        
+      </div>
+      <br>
+      <br>
+      <div>
+        <img src="http://i0.kym-cdn.com/entries/icons/original/000/019/580/anotheronelol.JPG" width="60%">        
+      </div>
+      <br>
+      <br>
+      <h3>HOW ABOUT REFACTORING THE CODE?</h3>
+      Of course this can be solved by making the code more dynamic but the problem with dynamic is that it becomes less readable and a bit hard to understand.
+      <br>
+      <br>
+      <br>
+      <div>
+        <img src="https://media.makeameme.org/created/what-in-tarnations.jpg" width="60%">        
+      </div>
+      <br>
+      <br>
+      <h3>No.js</h3>
+      This is why I decided to abstract this dynamic solution into a library that allows you to do these trivial DOM manipulations by using simple and intuitive attributes on your html instead.
+      <br>
+      <br>
+      <a href="http://nojs.io" target="_blank">No.js</a> is lightweight and can be very convenient. By using <a href="http://nojs.io" target="_blank">No.js</a> (Depending on how simple your site is) you might get away with doing all DOM manipulations without having to write any javascript at all.
+      <br>
+      <br>
+      So now I want to go through a few DOM manipulations we can easily do with no.js.
+      <br>
+      <br>
+      To have these examples work for you, be sure to add the nojs script to your  html file like so:
+      <br>
+      <script async src="http://jsfiddle.net/ifedapoolarewaju/gbbt8jvv/1/embed/html/light/"></script>
+      <br>
+      <br>
+      you can also install it from npm or download the zip file. <a href="http://nojs.io/#install" target="_blank">See.</a>
+      <br>
+      <br>
+      <b>1. Simple Tabs</b>
+      <br>
+      <br>
+      <iframe style="border: 1px #ccc solid" width="100%" height="350" src="http://jsfiddle.net/ifedapoolarewaju/tx9d5ehd/2/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      <br>
+      <br>
+      <br>
+      <b>2. Side menu toggle</b>
+      <br>
+      <br>
+      <iframe style="border: 1px #ccc solid" width="100%" height="450" src="http://jsfiddle.net/ifedapoolarewaju/y1gx8Lfk/8/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      <br>
+      <br>
+      <br>
+      <b>3. Dynamically set form inptut values on action</b>
+      <br>
+      <br>
+      <iframe style="border: 1px #ccc solid" width="100%" height="400" src="http://jsfiddle.net/ifedapoolarewaju/p03yx4cm/1/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+      The full documentaion for nojs can be found on <a href="http://nojs.io">nojs.io</a>
+      <br>
+      <br>
+      <h3>Why use No.js?:</h3>
+
+      <p><b>1</b>. It saves the stress of writing any javascript at all. You may only need to write javascript code when you need to do things like number calculations, make ajax calls etc.</p>
+
+      <p><b>2</b>. You don't have to load a heavy libraries to do little DOM manipulations. No.js is very lightweight (1KB), this is probably as light as the vanilla javascript code you might have otherwise written.</p>
+
+      <p><b>3</b>. It is very intuitive and easy to understand. With a near english syntax.</p>
+
+      <p><b>4</b>. It encourages writing less Javascript and more CSS. With the ease of triggering class/attribute changes, it becomes easier to add interactive feedbacks to css classes, than writing javascript animations</p>
+
+      <p><b>5</b>. It does not require prior Javascript knowledge. You basically don't need any javascript knowledge to do DOM manipulations easily</p>
+
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+        this.page.url = "http://ifedapo.com/posts/wonderful-nojs";
+        this.page.identifier = "http://ifedapo.com/posts/wonderful-nojs";
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ifedapo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <img src="/imgs/ifedapo.png" class="profile-image" width="100px">
+    <h3>Ifedapo Olarewaju</h3>
+    <p>Software Engineer.</p>
+    <br>
+    <p class="small-text">connect with me no social media</p>
+    <a href="https://github.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/github.png" width="30px"></a>
+    <a href="https://twitter.com/teddyskillz2" target="_blank" class="socio-account"><img src="/imgs/twitter.png" width="30px"></a>
+    <a href="https://linkedin.com/in/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/linkedin.png" width="30px"></a>
+    <a href="https://instagram.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/instagram.png" width="30px"></a>
+    <p>Or <a href="mailto:ifedapoolarewaju@gmail.com">send me a mail</a></p>
+  </div>
+
+  <footer>
+    &copy; 2017 Ifedapo Olarewaju
+  </footer>
+</body>
+</html>
