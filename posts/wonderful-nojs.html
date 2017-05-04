@@ -27,44 +27,44 @@
   <div>
     <h2>Things that you can do with No.js - Thursday, 4 May 2017</h2>
     <div class="post-content">
-      A while back I released a javascript library (<a href="http://nojs.io" target="_blank">no.js</a>) that helps you do simple DOM manipulations without the need to write a single line of javascript.
+      A while back I released a javascript library (<a href="http://nojs.io" target="_blank">no.js</a>) that helps you do simple DOM manipulations without the need to write a line of javascript.
       <br>
       <br>
-      This came about because it began to feel embarrassing that I couldn't get away with implementing simple interactive feedbacks on a page without runnning to a javascript file to either hide this or show that.
+      This came about because it began to feel embarrassing that I couldn't get away with implementing simple interactive feedback on a page without runnning to a javascript file to either "<span class="italic">hide</span>" this or "<span class="italic">show</span>" that.
       <br>
       <br>
-      Also it began to feel repetitive, basically having recurring code with similar patterns. And even though they act on different html elements it still feels quite detestable.
+      Also it began to feel repetitive. Basically having recurring code with similar patterns. And even though they act on different html elements it still feels quite detestable.
       <br>
       <br>
       <br>
-      <div>
-        <img src="https://s-media-cache-ak0.pinimg.com/564x/f1/bf/fa/f1bffaef88be8439608c2ad0f2a58a8a.jpg" width="60%">        
+      <div class="center-img">
+        <img src="https://s-media-cache-ak0.pinimg.com/564x/f1/bf/fa/f1bffaef88be8439608c2ad0f2a58a8a.jpg" width="50%">        
       </div>
       <br>
       <br>
-      <div>
-        <img src="http://i0.kym-cdn.com/entries/icons/original/000/019/580/anotheronelol.JPG" width="60%">        
+      <div class="center-img">
+        <img src="http://i0.kym-cdn.com/entries/icons/original/000/019/580/anotheronelol.JPG" width="50%">        
       </div>
       <br>
       <br>
       <h3>HOW ABOUT REFACTORING THE CODE?</h3>
-      Of course this can be solved by making the code more dynamic but the problem with dynamic is that it becomes less readable and a bit hard to understand.
+      Of course this can be solved by making the code more dynamic but the problem with dynamic is that it becomes less readable and a bit harder to understand.
       <br>
       <br>
       <br>
-      <div>
-        <img src="https://media.makeameme.org/created/what-in-tarnations.jpg" width="60%">        
+      <div class="center-img">
+        <img src="https://media.makeameme.org/created/what-in-tarnations.jpg" width="50%">        
       </div>
       <br>
       <br>
       <h3>No.js</h3>
-      This is why I decided to abstract this dynamic solution into a library that allows you to do these trivial DOM manipulations by using simple and intuitive attributes on your html instead.
+      For these reasons, I decided to abstract this dynamic solution into a library that allows you to do these trivial DOM manipulations by using simple and intuitive attributes on your html instead.
       <br>
       <br>
       <a href="http://nojs.io" target="_blank">No.js</a> is lightweight and can be very convenient. By using <a href="http://nojs.io" target="_blank">No.js</a> (Depending on how simple your site is) you might get away with doing all DOM manipulations without having to write any javascript at all.
       <br>
       <br>
-      So now I want to go through a few DOM manipulations we can easily do with no.js.
+      So now I want to go through a few DOM manipulation examples we can easily achieve with no.js.
       <br>
       <br>
       To have these examples work for you, be sure to add the nojs script to your  html file like so:
@@ -80,12 +80,18 @@
       <br>
       <iframe style="border: 1px #ccc solid" width="100%" height="350" src="http://jsfiddle.net/ifedapoolarewaju/tx9d5ehd/2/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
       <br>
+      Using No.js' <span class="italic code-color">on-click-switch-class</span> attribute, you can easily switch an active class from a set of similar elements. <a href="http://nojs.io/#classes" target="_blank">See</a>.
+      <br>
+      We also makes use of the attribute <span class="italic code-color">on-click-set-text</span> to set the text content of the tab. <a href="http://nojs.io/#text" target="_blank">See.</a>
+      <br>
       <br>
       <br>
       <b>2. Side menu toggle</b>
       <br>
       <br>
-      <iframe style="border: 1px #ccc solid" width="100%" height="450" src="http://jsfiddle.net/ifedapoolarewaju/y1gx8Lfk/8/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      <iframe style="border: 1px #ccc solid" width="100%" height="450" src="http://jsfiddle.net/ifedapoolarewaju/y1gx8Lfk/9/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      <br>
+      With the attribute <span class="italic code-color">on-click-toggle-class</span>, we toggle the class "active" of a target element with the css selection <span class="italic code-color">".sidemenu"</span>. <a href="http://nojs.io/#classes" target="_blank">See</a>.
       <br>
       <br>
       <br>
@@ -93,8 +99,8 @@
       <br>
       <br>
       <iframe style="border: 1px #ccc solid" width="100%" height="400" src="http://jsfiddle.net/ifedapoolarewaju/p03yx4cm/1/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-      The full documentaion for nojs can be found on <a href="http://nojs.io">nojs.io</a>
+      <br>
+      With the attribute <span class="italic code-color">on-click-set-value</span> we set the value of the target input element with the css selection "<span class="italic code-color">[name=number]</span> ". <a href="http://nojs.io/#value" target="_blank">See</a>.
       <br>
       <br>
       <h3>Why use No.js?:</h3>
@@ -108,7 +114,25 @@
       <p><b>4</b>. It encourages writing less Javascript and more CSS. With the ease of triggering class/attribute changes, it becomes easier to add interactive feedbacks to css classes, than writing javascript animations</p>
 
       <p><b>5</b>. It does not require prior Javascript knowledge. You basically don't need any javascript knowledge to do DOM manipulations easily</p>
+      <br>
+      <br>
+      <div  class="center-img">
+        <img src="https://img.memesuper.com/594d8ede6a5b7b64c93b4ed7a9111927_now-wait-just-a-minute-katt-williams-shocked-meme-generator-wait-a-minute-meme_400-400.jpeg" width="50%">
 
+        <h3>Isn't inline javascript a bad idea?</h3>
+      </div>
+      <br>
+      <br>
+      Well a good number of reasons for which "<a class="italic" href="http://stackoverflow.com/a/11742769/4088675" target="_blank">inline javascript is such a bad idea</a>" aren't inherited by using No.js.
+      <br>
+      <br>
+      While you might find other reasons that frown upon the No.js pattern, it eventually boils down to tradeoffs, perks and picking your poison in accordance to how you'd prefer to die &#128516;.
+      <br>
+      <br>
+      <br>
+      The full documentaion for nojs can be found on <a href="http://nojs.io">nojs.io</a>
+      <br>
+      <br>
       <div id="disqus_thread"></div>
       <script>
         var disqus_config = function () {
