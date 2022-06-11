@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post: How to customise Firebase Action URLs</title>
+  <meta property="og:title" content="Post: How to customise Firebase Action URLs" />
+  <meta name="description" content=" A while back I released a javascript library (no.js) that helps you do simple DOM manipulations without the need to write a single line of javascript ...">
+  <meta property="og:description" content=" A while back I released a javascript library (no.js) that helps you do simple DOM manipulations without the need to write a single line of javascript ...">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/blog.css">
+  <link rel="icon" href="/imgs/ifedapo.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h2 class="logo">Ifedapo.com</h2>
+
+     <ul>
+      <li>
+        <a href="/">ABOUT</a>
+      </li>
+      <li>
+        <a href="/blog" class="active">BLOG</a>
+      </li>
+      <li>
+        <a href="/projects">PROJECTS</a>
+      </li>
+    </ul>
+  </header>
+  <div>
+    <h2>How to customise Firebase Action URLs - Saturday, 11 June 2022</h2>
+    <div class="post-content">
+      I’ve been here before. I built a web app that used Firebase authentication and was about to deploy to production. But first, I needed to change the action URLs present in Firebase's password reset emails to point to a custom domain name.
+      I Googled and rummaged through the firebase documentation with no luck, until I finally stumbled on a vague comment somewhere that gave me a hint about how to resolve the issue.
+      Phew! I managed to resolve it! My day was made! *adds "Firebase expert" to resume.
+      <br>
+      <br>
+      9 Months, 3 projects later, I’m here again, and once again, I have no clue how I went about it the last time I managed resolve it. Googling, StackOverflowing, rummaging, I finally find it, and this time, I’ve decided to document it. If Firebase won’t do it, I will!
+      <br>
+      <br>
+      So here are the steps to customise the firebase action URLs that are present in your apps' "Password reset", and "Account verification" emails. This is important to write because as at the time of writing (11, June 2022), it is quite easy to miss.
+      <br>
+      <br>
+      <br>
+      <b>1.</b> Login to your Firebase console (obvioisly) and navigate to the Firebase Project whose action URL you'd like to customise.
+      <br>
+      <br>
+      <b>2.</b> Navigate to the “Hosting” page via the side bar.
+      <br>
+      On my end it looks something like the image below. If I hadn’t learnt, I would’ve thought to myself “this is certainly not where I should be looking”. But it is exactly where you should be looking. 😅
+      <br>
+      <br>
+      <div>
+        <img src="/imgs/blog/host-nav.png" width="90%">        
+      </div>
+      <br>
+      <br>
+      <b>3.</b> Click the “Get Started” button.
+      <br>
+      <br>
+      <div>
+        <img src="/imgs/blog/get-started.png" width="90%">        
+      </div>
+      <br>
+      <br>
+      <b>4.</b> Keep clicking “Next” while ignoring all the nom related commands displayed.
+      <br>
+      <br>
+      <div>
+        <img src="/imgs/blog/wizard-next.png" width="90%">        
+      </div>
+      <br>
+      <br>
+      <b>5.</b> Finally, click the “continue to console” button.
+      <br>
+      <br>
+      <div>
+        <img src="/imgs/blog/wizard-next.png" width="90%">        
+      </div>
+      Phew! This is where we need to be but it has been unfortunately hidden from a lot of users behind that setup wizard.
+      <br>
+      <br>
+      <b>6.</b> Click “Add Custom domain”.
+      <br>
+      <br>
+      <div>
+        <img src="/imgs/blog/add-custom-domain.png" width="90%">        
+      </div>
+      <br>
+      <br>
+      <b>7.</b> Enter the domain name you’d like to point your action URL to and follow the steps to verify the domain name on your Domain Name Provider website.
+      <br>
+      <br>
+      <div>
+        <img src="/imgs/blog/continue-custom-domain.png" width="90%">        
+      </div>
+      Once that’s done, just wait for the verification to be completed. This can take from minutes to hours (for my case it took about 10 minutes). Once the verification is done, the “status” column from the screenshot on step 7. will read “connected”.
+      <br>
+      <br>
+      <b>8.</b> Now that domain name verification is done, click the “Authentication” link on the sidebar navigation.
+      <br>
+      <br>
+      <div>
+        <img src="/imgs/blog/auth-nav.png" width="90%">        
+      </div>
+      <br>
+      <br>
+      <b>9.</b> Click the “Templates” tab
+      <br>
+      <br>
+      <b>10.</b> Click the pencil button
+      <br>
+      <br>
+      <b>11.</b> Scroll down and click “customise action url”
+      <br>
+      <br>
+      <b>12.</b> Replace the "projectname.firebaseapp.com" part of the action URL with your new domain name while keeping the rest of the url the same. So for example, if the name of your project is “randomproject”, and your custom domain name is "randomdomain.com", and the action URL looks something like this https://randomproject.firebaseapp.com/__/auth/action?mode=action&oobCode=code you’d simply modify the action URL to look something like this https://randomdomain.com/__/auth/action?mode=action&oobCode=code
+      <br>
+      <br>
+      <b>13.</b> Save it and test it out by triggering an "Email address verification" email.
+      <br>
+      <br>
+      <b>14.</b> Do the same for other email templates which you'd like to update.
+      <br>
+      <br>
+      And there you have it! I hope this has worked for you as it worked for me. If you’d also like to customise the email address that sends the email to your users, simply click the “customise domain” link (still on the “Templates” tab) underneath the default email address and follow the domain verification instructions.
+      If you have any questions, please feel free to drop comments.
+      <br>
+      <br>
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+        this.page.url = "https://ifedapo.com/posts/customise-firebase-action-url";
+        this.page.identifier = "https://ifedapo.com/posts/customise-firebase-action-url";
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ifedapo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <img src="/imgs/ifedapo.png" class="profile-image" width="100px">
+    <h3>Ifedapo Olarewaju</h3>
+    <p>Software Engineer.</p>
+    <br>
+    <p class="small-text">connect with me on social media</p>
+    <a href="https://github.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/github.png" width="30px"></a>
+    <a href="https://twitter.com/ifedapolarewaju" target="_blank" class="socio-account"><img src="/imgs/twitter.png" width="30px"></a>
+    <a href="https://linkedin.com/in/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/linkedin.png" width="30px"></a>
+    <p>Or <a href="mailto:ifedapoolarewaju@gmail.com">send me a mail</a></p>
+  </div>
+
+  <footer>
+    &copy; 2016 - 2022 Ifedapo Olarewaju
+  </footer>
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-98424856-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
