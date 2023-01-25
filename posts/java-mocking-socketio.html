@@ -1,124 +1,124 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Post: Mocking a Socket.io client (Java)</title>
-  <meta property="og:title" content="Post: Mocking a Socket.io client (Java)" />
-  <meta name="description" content="Recently I was working on a Java project where I had to connect to a socket.io server using the Java socket.io client. When that was done, I had to write tests for it ...">
-  <meta property="og:description" content="Recently I was working on a Java project where I had to connect to a socket.io server using the Java socket.io client. When that was done, I had to write tests for it ...">
-  <meta name="keywords"
-    content="Socket.io Mock, Mock, Java, Socket.io Mock Java, Socketio Mock Java, Socket.io Client Mock Java, Test Socket.io Mock; Testing; Socket.io Mock; Socket.io Mock Java; TDD; Test; Socketio;" />
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <link rel="stylesheet" type="text/css" href="/css/blog.css">
-  <link rel="icon" href="/imgs/ifedapo.png" type="image/x-icon">
-</head>
-<body>
-  <header>
-    <h2 class="logo">Ifedapo.com</h2>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post: Mocking a Socket.io client (Java)</title>
+    <meta property="og:title" content="Post: Mocking a Socket.io client (Java)" />
+    <meta name="description" content="Recently I was working on a Java project where I had to connect to a socket.io server using the Java socket.io client. When that was done, I had to write tests for it ...">
+    <meta property="og:description" content="Recently I was working on a Java project where I had to connect to a socket.io server using the Java socket.io client. When that was done, I had to write tests for it ...">
+    <meta name="keywords"
+      content="Socket.io Mock, Mock, Java, Socket.io Mock Java, Socketio Mock Java, Socket.io Client Mock Java, Test Socket.io Mock; Testing; Socket.io Mock; Socket.io Mock Java; TDD; Test; Socketio;" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/blog.css">
+    <link rel="icon" href="/imgs/ifedapo.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <h2 class="logo">Ifedapo.com</h2>
 
-     <ul>
-      <li>
-        <a href="/">ABOUT</a>
-      </li>
-      <li>
-        <a href="/blog" class="active">BLOG</a>
-      </li>
-      <li>
-        <a href="/projects">PROJECTS</a>
-      </li>
-    </ul>
-  </header>
-  <div>
-    <h2>Mocking a Socket.io client (Java) - Sunday, 28 July 2019</h2>
-    <div class="post-content">
-      Recently I was working on a Java project where I had to connect to a <a href="https://socket.io/" target="_blank" rel="noopener noreferrer">socket.io</a> server using the <a href="https://github.com/socketio/socket.io-client-java" target="_blank" rel="noopener noreferrer">Java socket.io client</a>. When that was done, I had to write tests for it, but I couldn't find any mocking library that would help you mock a socket.io server/client. Ideally, I was thinking of something similar to <a href="https://www.mock-server.com/#what-is-mockserver" target="_blank" rel="noopener noreferrer">mockserver client</a>, but as I didn't find that, I looked for at least a resource online that demonstrates how to mock a socket.io client in Java, but no luck. The closest thing I found was this <a href="https://github.com/socketio/socket.io-client-java/issues/146#issuecomment-110123320" target="_blank" rel="noopener noreferrer">github issue</a> which was helpful, but I thought it'd be really helpful if I put together that article that I never found.
-      <br>
-      <br>
-      So yeah, since implementing a mock socket.io server would've required in-depth knowledge about the socket.io protocol, I settled for creating a mock for the socket.io client itself.
-      <br>
-      <br>
-      Say we have a Java class that uses the socket.io client like so:
-      <br>
-      <br>
-      <div class="center-img">
-        <script
-          src="https://gist.github.com/ifedapoolarewaju/a12cdf06bc1e76e92f853a5328e19f9a.js?file=ClassUsingSocketIO.java"></script>
+      <ul>
+        <li>
+          <a href="/">ABOUT</a>
+        </li>
+        <li>
+          <a href="/blog" class="active">BLOG</a>
+        </li>
+        <li>
+          <a href="/projects">PROJECTS</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h2>Mocking a Socket.io client (Java) - Sunday, 28 July 2019</h2>
+      <div class="post-content">
+        Recently I was working on a Java project where I had to connect to a <a href="https://socket.io/" target="_blank" rel="noopener noreferrer">socket.io</a> server using the <a href="https://github.com/socketio/socket.io-client-java" target="_blank" rel="noopener noreferrer">Java socket.io client</a>. When that was done, I had to write tests for it, but I couldn't find any mocking library that would help you mock a socket.io server/client. Ideally, I was thinking of something similar to <a href="https://www.mock-server.com/#what-is-mockserver" target="_blank" rel="noopener noreferrer">mockserver client</a>, but as I didn't find that, I looked for at least a resource online that demonstrates how to mock a socket.io client in Java, but no luck. The closest thing I found was this <a href="https://github.com/socketio/socket.io-client-java/issues/146#issuecomment-110123320" target="_blank" rel="noopener noreferrer">github issue</a> which was helpful, but I thought it'd be really helpful if I put together that article that I never found.
+        <br>
+        <br>
+        So yeah, since implementing a mock socket.io server would've required in-depth knowledge about the socket.io protocol, I settled for creating a mock for the socket.io client itself.
+        <br>
+        <br>
+        Say we have a Java class that uses the socket.io client like so:
+        <br>
+        <br>
+        <div class="center-img">
+          <script
+            src="https://gist.github.com/ifedapoolarewaju/a12cdf06bc1e76e92f853a5328e19f9a.js?file=ClassUsingSocketIO.java"></script>
+        </div>
+        This class primarily has 2 methods:
+        <br>
+        1. getSocket - which returns the socket
+        <br>
+        2. useTheSocket - which uses the socket
+        <br>
+        <br>
+        Next, we'd have a mock socket.io client class like so:
+        <br>
+        <br>
+        <div class="center-img">
+          <script
+            src="https://gist.github.com/ifedapoolarewaju/a12cdf06bc1e76e92f853a5328e19f9a.js?file=MockSocketIO.java"></script>
+        </div>
+        The goals of the mock socket are to:
+        <br>
+        1. Keep the entire Socket interaction in a single Thread
+        <br>
+        2. Register all the events emitted by the client
+        <br>
+        <br>
+        And in your test you can do something this:
+        <br>
+        <br>
+        <div class="center-img">
+          <script
+            src="https://gist.github.com/ifedapoolarewaju/a12cdf06bc1e76e92f853a5328e19f9a.js?file=TestClassUsingSocketIO.java"></script>
+        </div>
+        <br>
+        <br>
+        And that's that about that! I hope you find this approach useful for use-case. Also if you found this article useful in anyway, please feel free to reshare.
+        <br>
+        <br>
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+          this.page.url = "https://ifedapo.com/posts/java-mocking-socketio";
+          this.page.identifier = "https://ifedapo.com/posts/java-mocking-socketio";
+          };
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://ifedapo.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
-      This class primarily has 2 methods:
-      <br>
-      1. getSocket - which returns the socket
-      <br>
-      2. useTheSocket - which uses the socket
-      <br>
-      <br>
-      Next, we'd have a mock socket.io client class like so:
-      <br>
-      <br>
-      <div class="center-img">
-        <script
-          src="https://gist.github.com/ifedapoolarewaju/a12cdf06bc1e76e92f853a5328e19f9a.js?file=MockSocketIO.java"></script>
-      </div>
-      The goals of the mock socket are to:
-      <br>
-      1. Keep the entire Socket interaction in a single Thread
-      <br>
-      2. Register all the events emitted by the client
-      <br>
-      <br>
-      And in your test you can do something this:
-      <br>
-      <br>
-      <div class="center-img">
-        <script
-          src="https://gist.github.com/ifedapoolarewaju/a12cdf06bc1e76e92f853a5328e19f9a.js?file=TestClassUsingSocketIO.java"></script>
-      </div>
-      <br>
-      <br>
-      And that's that about that! I hope you find this approach useful for use-case. Also if you found this article useful in anyway, please feel free to reshare.
-      <br>
-      <br>
-      <div id="disqus_thread"></div>
-      <script>
-        var disqus_config = function () {
-        this.page.url = "https://ifedapo.com/posts/java-mocking-socketio";
-        this.page.identifier = "https://ifedapo.com/posts/java-mocking-socketio";
-        };
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://ifedapo.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-  </div>
 
-  <div class="sidebar">
-    <img src="/imgs/ifedapo.png" class="profile-image" width="100px">
-    <h3>Ifedapo Olarewaju</h3>
-    <p>Software Engineer.</p>
-    <br>
-    <p class="small-text">connect with me on social media</p>
-    <a href="https://github.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/github.png" width="30px"></a>
-    <a href="https://twitter.com/ifedapolarewaju" target="_blank" class="socio-account"><img src="/imgs/twitter.png" width="30px"></a>
-    <a href="https://linkedin.com/in/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/linkedin.png" width="30px"></a>
-    <p>Or <a href="mailto:ifedapoolarewaju@gmail.com">send me a mail</a></p>
-  </div>
+    <div class="sidebar">
+      <img src="/imgs/ifedapo.png" class="profile-image" width="100px">
+      <h3>Ifedapo Olarewaju</h3>
+      <p>Software Engineer.</p>
+      <br>
+      <p class="small-text">connect with me on social media</p>
+      <a href="https://github.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/github.png" width="30px"></a>
+      <a href="https://twitter.com/ifedapolarewaju" target="_blank" class="socio-account"><img src="/imgs/twitter.png" width="30px"></a>
+      <a href="https://linkedin.com/in/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/linkedin.png" width="30px"></a>
+      <p>Or <a href="mailto:ifedapoolarewaju@gmail.com">send me a mail</a></p>
+    </div>
 
-  <footer>
-    &copy; 2016 - 2022 Ifedapo Olarewaju
-  </footer>
-</body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <footer>
+      &copy; 2016 - 2023 Ifedapo Olarewaju
+    </footer>
+  </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-98424856-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-98424856-1', 'auto');
+    ga('send', 'pageview');
 
-</script>
+  </script>
 </html>

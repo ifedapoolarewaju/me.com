@@ -1,177 +1,177 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Post: Doing DOM Manipulations without writing JavaScript | Things that you can do with No.js</title>
-  <meta property="og:title" content="Post: Doing DOM Manipulations without writing JavaScript | Things that you can do with No.js" />
-  <meta name="description" content=" A while back I released a javascript library (no.js) that helps you do simple DOM manipulations without the need to write a single line of javascript ...">
-  <meta property="og:description" content=" A while back I released a javascript library (no.js) that helps you do simple DOM manipulations without the need to write a single line of javascript ...">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <link rel="stylesheet" type="text/css" href="/css/blog.css">
-  <link rel="icon" href="/imgs/ifedapo.png" type="image/x-icon">
-</head>
-<body>
-  <header>
-    <h2 class="logo">Ifedapo.com</h2>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post: Doing DOM Manipulations without writing JavaScript | Things that you can do with No.js</title>
+    <meta property="og:title" content="Post: Doing DOM Manipulations without writing JavaScript | Things that you can do with No.js" />
+    <meta name="description" content=" A while back I released a javascript library (no.js) that helps you do simple DOM manipulations without the need to write a single line of javascript ...">
+    <meta property="og:description" content=" A while back I released a javascript library (no.js) that helps you do simple DOM manipulations without the need to write a single line of javascript ...">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/blog.css">
+    <link rel="icon" href="/imgs/ifedapo.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <h2 class="logo">Ifedapo.com</h2>
 
-     <ul>
-      <li>
-        <a href="/">ABOUT</a>
-      </li>
-      <li>
-        <a href="/blog" class="active">BLOG</a>
-      </li>
-      <li>
-        <a href="/projects">PROJECTS</a>
-      </li>
-    </ul>
-  </header>
-  <div>
-    <h2>Doing DOM Manipulations without writing JavaScript - Thursday, 4 May 2017</h2>
-    <div class="post-content">
-      A while back I released a javascript library (<a href="https://ifedapoolarewaju.github.io/nojs-site" target="_blank">no.js</a>) that helps you do simple DOM manipulations without the need to write a line of javascript.
-      <br>
-      <br>
-      This came about because it began to feel embarrassing that I couldn't get away with implementing simple interactive feedback on a page without runnning to a javascript file to either "<span class="italic">hide</span>" this or "<span class="italic">show</span>" that.
-      <br>
-      <br>
-      Also it began to feel repetitive. Basically having recurring code with similar patterns. And even though they act on different html elements it still feels quite detestable.
-      <br>
-      <br>
-      <br>
-      <div class="center-img">
-        <img src="https://s-media-cache-ak0.pinimg.com/564x/f1/bf/fa/f1bffaef88be8439608c2ad0f2a58a8a.jpg" width="50%">        
+      <ul>
+        <li>
+          <a href="/">ABOUT</a>
+        </li>
+        <li>
+          <a href="/blog" class="active">BLOG</a>
+        </li>
+        <li>
+          <a href="/projects">PROJECTS</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h2>Doing DOM Manipulations without writing JavaScript - Thursday, 4 May 2017</h2>
+      <div class="post-content">
+        A while back I released a javascript library (<a href="https://ifedapoolarewaju.github.io/nojs-site" target="_blank">no.js</a>) that helps you do simple DOM manipulations without the need to write a line of javascript.
+        <br>
+        <br>
+        This came about because it began to feel embarrassing that I couldn't get away with implementing simple interactive feedback on a page without runnning to a javascript file to either "<span class="italic">hide</span>" this or "<span class="italic">show</span>" that.
+        <br>
+        <br>
+        Also it began to feel repetitive. Basically having recurring code with similar patterns. And even though they act on different html elements it still feels quite detestable.
+        <br>
+        <br>
+        <br>
+        <div class="center-img">
+          <img src="https://s-media-cache-ak0.pinimg.com/564x/f1/bf/fa/f1bffaef88be8439608c2ad0f2a58a8a.jpg" width="50%">        
+        </div>
+        <br>
+        <br>
+        <h3>HOW ABOUT REFACTORING THE CODE?</h3>
+        Of course this can be solved by making the code more dynamic but the problem with dynamic is that it becomes less readable and a bit harder to understand.
+        <br>
+        <br>
+        <br>
+        <div class="center-img">
+          <img src="https://media.makeameme.org/created/what-in-tarnations.jpg" width="50%">        
+        </div>
+        <br>
+        <br>
+        <h3>No.js</h3>
+        For these reasons, I decided to abstract this dynamic solution into a library that allows you to do these trivial DOM manipulations by using simple and intuitive attributes on your html instead.
+        <br>
+        <br>
+        <a href="https://ifedapoolarewaju.github.io/nojs-site" target="_blank">No.js</a> is lightweight and can be very convenient. By using <a href="https://ifedapoolarewaju.github.io/nojs-site" target="_blank">No.js</a> (Depending on how simple your site is) you might get away with doing all DOM manipulations without having to write any javascript at all.
+        <br>
+        <br>
+        So now I want to go through a few DOM manipulation examples we can easily achieve with no.js.
+        <br>
+        <br>
+        To have these examples work for you, be sure to add the nojs script to your  html file like so:
+        <br>
+        <script async src="https://jsfiddle.net/ifedapoolarewaju/gbbt8jvv/1/embed/html/light/"></script>
+        <br>
+        <br>
+        you can also install it from npm or download the zip file. <a href="https://ifedapoolarewaju.github.io/nojs-site/#install" target="_blank">See.</a>
+        <br>
+        <br>
+        <b>1. Simple Tabs</b>
+        <br>
+        <br>
+        <iframe style="border: 1px #ccc solid" width="100%" height="350" src="https://jsfiddle.net/ifedapoolarewaju/tx9d5ehd/2/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        <br>
+        Using No.js' <span class="italic code-color">on-click-switch-class</span> attribute, you can easily switch an active class from a set of similar elements. <a href="https://ifedapoolarewaju.github.io/nojs-site/#classes" target="_blank">See</a>.
+        <br>
+        We also makes use of the attribute <span class="italic code-color">on-click-set-text</span> to set the text content of the tab. <a href="https://ifedapoolarewaju.github.io/nojs-site/#text" target="_blank">See.</a>
+        <br>
+        <br>
+        <br>
+        <b>2. Side menu toggle</b>
+        <br>
+        <br>
+        <iframe style="border: 1px #ccc solid" width="100%" height="450" src="https://jsfiddle.net/ifedapoolarewaju/y1gx8Lfk/9/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        <br>
+        With the attribute <span class="italic code-color">on-click-toggle-class</span>, we toggle the class "active" of a target element with the css selection <span class="italic code-color">".sidemenu"</span>. <a href="https://ifedapoolarewaju.github.io/nojs-site/#classes" target="_blank">See</a>.
+        <br>
+        <br>
+        <br>
+        <b>3. Dynamically set form inptut values on action</b>
+        <br>
+        <br>
+        <iframe style="border: 1px #ccc solid" width="100%" height="400" src="https://jsfiddle.net/ifedapoolarewaju/p03yx4cm/1/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        <br>
+        With the attribute <span class="italic code-color">on-click-set-value</span> we set the value of the target input element with the css selection "<span class="italic code-color">[name=number]</span> ". <a href="https://ifedapoolarewaju.github.io/nojs-site/#value" target="_blank">See</a>.
+        <br>
+        <br>
+        <h3>Why use No.js?:</h3>
+
+        <p><b>1</b>. It saves the stress of writing any javascript at all. You may only need to write javascript code when you need to do things like number calculations, make ajax calls etc.</p>
+
+        <p><b>2</b>. You don't have to load a heavy libraries to do little DOM manipulations. No.js is very lightweight (1KB), this is probably as light as the vanilla javascript code you might have otherwise written.</p>
+
+        <p><b>3</b>. It is very intuitive and easy to understand. With a near english syntax.</p>
+
+        <p><b>4</b>. It encourages writing less Javascript and more CSS. With the ease of triggering class/attribute changes, it becomes easier to add interactive feedbacks to css classes, than writing javascript animations</p>
+
+        <p><b>5</b>. It does not require prior Javascript knowledge. You basically don't need any javascript knowledge to do DOM manipulations easily</p>
+        <br>
+        <br>
+        <div  class="center-img">
+          <img src="https://img.memesuper.com/594d8ede6a5b7b64c93b4ed7a9111927_now-wait-just-a-minute-katt-williams-shocked-meme-generator-wait-a-minute-meme_400-400.jpeg" width="50%">
+
+          <h3>Isn't inline javascript a bad idea?</h3>
+        </div>
+        <br>
+        <br>
+        Well a good number of reasons for which "<a class="italic" href="https://stackoverflow.com/a/11742769/4088675" target="_blank">inline javascript is such a bad idea</a>" aren't inherited by using No.js.
+        <br>
+        <br>
+        While you might find other reasons that frown upon the No.js pattern, it eventually boils down to tradeoffs, perks and picking your poison in accordance to how you'd prefer to die &#128516;.
+        <br>
+        <br>
+        <br>
+        The full documentaion for nojs can be found on <a href="https://ifedapoolarewaju.github.io/nojs-site">nojs.io</a>
+        <br>
+        <br>
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+          this.page.url = "https://ifedapo.com/posts/wonderful-nojs";
+          this.page.identifier = "https://ifedapo.com/posts/wonderful-nojs";
+          };
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://ifedapo.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
-      <br>
-      <br>
-      <h3>HOW ABOUT REFACTORING THE CODE?</h3>
-      Of course this can be solved by making the code more dynamic but the problem with dynamic is that it becomes less readable and a bit harder to understand.
-      <br>
-      <br>
-      <br>
-      <div class="center-img">
-        <img src="https://media.makeameme.org/created/what-in-tarnations.jpg" width="50%">        
-      </div>
-      <br>
-      <br>
-      <h3>No.js</h3>
-      For these reasons, I decided to abstract this dynamic solution into a library that allows you to do these trivial DOM manipulations by using simple and intuitive attributes on your html instead.
-      <br>
-      <br>
-      <a href="https://ifedapoolarewaju.github.io/nojs-site" target="_blank">No.js</a> is lightweight and can be very convenient. By using <a href="https://ifedapoolarewaju.github.io/nojs-site" target="_blank">No.js</a> (Depending on how simple your site is) you might get away with doing all DOM manipulations without having to write any javascript at all.
-      <br>
-      <br>
-      So now I want to go through a few DOM manipulation examples we can easily achieve with no.js.
-      <br>
-      <br>
-      To have these examples work for you, be sure to add the nojs script to your  html file like so:
-      <br>
-      <script async src="https://jsfiddle.net/ifedapoolarewaju/gbbt8jvv/1/embed/html/light/"></script>
-      <br>
-      <br>
-      you can also install it from npm or download the zip file. <a href="https://ifedapoolarewaju.github.io/nojs-site/#install" target="_blank">See.</a>
-      <br>
-      <br>
-      <b>1. Simple Tabs</b>
-      <br>
-      <br>
-      <iframe style="border: 1px #ccc solid" width="100%" height="350" src="https://jsfiddle.net/ifedapoolarewaju/tx9d5ehd/2/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-      <br>
-      Using No.js' <span class="italic code-color">on-click-switch-class</span> attribute, you can easily switch an active class from a set of similar elements. <a href="https://ifedapoolarewaju.github.io/nojs-site/#classes" target="_blank">See</a>.
-      <br>
-      We also makes use of the attribute <span class="italic code-color">on-click-set-text</span> to set the text content of the tab. <a href="https://ifedapoolarewaju.github.io/nojs-site/#text" target="_blank">See.</a>
-      <br>
-      <br>
-      <br>
-      <b>2. Side menu toggle</b>
-      <br>
-      <br>
-      <iframe style="border: 1px #ccc solid" width="100%" height="450" src="https://jsfiddle.net/ifedapoolarewaju/y1gx8Lfk/9/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-      <br>
-      With the attribute <span class="italic code-color">on-click-toggle-class</span>, we toggle the class "active" of a target element with the css selection <span class="italic code-color">".sidemenu"</span>. <a href="https://ifedapoolarewaju.github.io/nojs-site/#classes" target="_blank">See</a>.
-      <br>
-      <br>
-      <br>
-      <b>3. Dynamically set form inptut values on action</b>
-      <br>
-      <br>
-      <iframe style="border: 1px #ccc solid" width="100%" height="400" src="https://jsfiddle.net/ifedapoolarewaju/p03yx4cm/1/embedded/result,html,css,js/light/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-      <br>
-      With the attribute <span class="italic code-color">on-click-set-value</span> we set the value of the target input element with the css selection "<span class="italic code-color">[name=number]</span> ". <a href="https://ifedapoolarewaju.github.io/nojs-site/#value" target="_blank">See</a>.
-      <br>
-      <br>
-      <h3>Why use No.js?:</h3>
-
-      <p><b>1</b>. It saves the stress of writing any javascript at all. You may only need to write javascript code when you need to do things like number calculations, make ajax calls etc.</p>
-
-      <p><b>2</b>. You don't have to load a heavy libraries to do little DOM manipulations. No.js is very lightweight (1KB), this is probably as light as the vanilla javascript code you might have otherwise written.</p>
-
-      <p><b>3</b>. It is very intuitive and easy to understand. With a near english syntax.</p>
-
-      <p><b>4</b>. It encourages writing less Javascript and more CSS. With the ease of triggering class/attribute changes, it becomes easier to add interactive feedbacks to css classes, than writing javascript animations</p>
-
-      <p><b>5</b>. It does not require prior Javascript knowledge. You basically don't need any javascript knowledge to do DOM manipulations easily</p>
-      <br>
-      <br>
-      <div  class="center-img">
-        <img src="https://img.memesuper.com/594d8ede6a5b7b64c93b4ed7a9111927_now-wait-just-a-minute-katt-williams-shocked-meme-generator-wait-a-minute-meme_400-400.jpeg" width="50%">
-
-        <h3>Isn't inline javascript a bad idea?</h3>
-      </div>
-      <br>
-      <br>
-      Well a good number of reasons for which "<a class="italic" href="https://stackoverflow.com/a/11742769/4088675" target="_blank">inline javascript is such a bad idea</a>" aren't inherited by using No.js.
-      <br>
-      <br>
-      While you might find other reasons that frown upon the No.js pattern, it eventually boils down to tradeoffs, perks and picking your poison in accordance to how you'd prefer to die &#128516;.
-      <br>
-      <br>
-      <br>
-      The full documentaion for nojs can be found on <a href="https://ifedapoolarewaju.github.io/nojs-site">nojs.io</a>
-      <br>
-      <br>
-      <div id="disqus_thread"></div>
-      <script>
-        var disqus_config = function () {
-        this.page.url = "https://ifedapo.com/posts/wonderful-nojs";
-        this.page.identifier = "https://ifedapo.com/posts/wonderful-nojs";
-        };
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://ifedapo.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-  </div>
 
-  <div class="sidebar">
-    <img src="/imgs/ifedapo.png" class="profile-image" width="100px">
-    <h3>Ifedapo Olarewaju</h3>
-    <p>Software Engineer.</p>
-    <br>
-    <p class="small-text">connect with me on social media</p>
-    <a href="https://github.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/github.png" width="30px"></a>
-    <a href="https://twitter.com/ifedapolarewaju" target="_blank" class="socio-account"><img src="/imgs/twitter.png" width="30px"></a>
-    <a href="https://linkedin.com/in/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/linkedin.png" width="30px"></a>
-    <p>Or <a href="mailto:ifedapoolarewaju@gmail.com">send me a mail</a></p>
-  </div>
+    <div class="sidebar">
+      <img src="/imgs/ifedapo.png" class="profile-image" width="100px">
+      <h3>Ifedapo Olarewaju</h3>
+      <p>Software Engineer.</p>
+      <br>
+      <p class="small-text">connect with me on social media</p>
+      <a href="https://github.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/github.png" width="30px"></a>
+      <a href="https://twitter.com/ifedapolarewaju" target="_blank" class="socio-account"><img src="/imgs/twitter.png" width="30px"></a>
+      <a href="https://linkedin.com/in/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/linkedin.png" width="30px"></a>
+      <p>Or <a href="mailto:ifedapoolarewaju@gmail.com">send me a mail</a></p>
+    </div>
 
-  <footer>
-    &copy; 2016 - 2022 Ifedapo Olarewaju
-  </footer>
-</body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <footer>
+      &copy; 2016 - 2023 Ifedapo Olarewaju
+    </footer>
+  </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-98424856-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-98424856-1', 'auto');
+    ga('send', 'pageview');
 
-</script>
+  </script>
 </html>
