@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post: Play In The (Chrome) Sandbox</title>
+    <meta property="og:title" content="Post: Play In The (Chrome) Sandbox" />
+    <meta name="description" content="2020 was a rather unprecedented year. If our lives were paintings, it feels like whoever was painting the canvas for 2020 might have been knocked over by accident.">
+    <meta property="og:description" content="2020 was a rather unprecedented year. If our lives were paintings, it feels like whoever was painting the canvas for 2020 might have been knocked over by accident.">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/blog.css">
+    <link rel="icon" href="/imgs/ifedapo.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <h2 class="logo">Ifedapo.com</h2>
+      <ul>
+        <li>
+          <a href="/">ABOUT</a>
+        </li>
+        <li>
+          <a href="/blog" class="active">BLOG</a>
+        </li>
+        <li>
+          <a href="/projects">PROJECTS</a>
+        </li>
+      </ul>
+    </header>
+    <div>
+      <h2>Play In The (Chrome) Sandbox - Friday, 03 March 2023</h2>
+      <div class="post-content">
+        2020 was a rather unprecedented year. If our lives were paintings, it feels like whoever was painting the canvas for 2020 might have been knocked over by accident. And as they ended up with an extremely bad smudge, they went “oh well, looks like this is going to be one of those Jackson Pollock paintings!”
+        <br/>
+        <br/>
+        So yeah there was COVID, Lockdown, yada yada, the ripple effect went all the way down to cinemas shutting down. And as I was in Lagos Nigeria at the time, what that meant was, watching movies were strictly narrowed down to Netflix, Amazon Prime (most other streaming platforms don’t operate in Nigeria), and transfer of movie files via Hard Drive.
+        <br/>
+        <br/>
+        Usually, if I had to play a video from untrusted sources on my computer, I’d always resort to opening them with Chrome (literally with an html video tag and src pointing to the video’s local file path). Now for the case of video files transferred via Hard Drive, because I can not validate the original source of the videos, I would have a hard time shaking the thought that there may be some exploit laced into such video files that could compromise my computer the moment I play them. For that reason, I would feel uneasy about playing such videos with my favourite native video players such as VLC. I would still resort to the Chrome browser as mentioned above.
+        <br/>
+        Why did I resort to using Chrome Browser you’d ask?
+        <br/>
+        <br/>
+        <h3>Enter the Chrome Sandbox</h3>
+        So Chrome is built with a Sandbox architecture which has a mighty security advantage (*whispers* but unfortunately also eats up your computer memory like a parasite).
+        <blockquote>
+          Sandboxing is a technical term meaning to separate processes out into independent spaces to see how they function individually. Chrome handles its workload as a series of multiple processes rather than as part of one large browser process
+        </blockquote>
+        <br/>
+        <blockquote>
+          The security advantage in sandboxing comes from how Chrome implements this feature in Windows. Chrome controls the access token for each process in Windows XP, Vista and Windows 7. On these operating systems, an access token for a process allows that process access to important information about your system, like its files and registry keys. Chrome intercepts each access token from the processes launched from the browser, and it modifies that token to limit its access to that information.
+          So, in Windows, Chrome's sandboxing helps block Web pages that try to install malware, capture your personal information or obtain data from your hard drive
+        </blockquote>
+        <p class="small-text italic">(excerpts from <a href="https://computer.howstuffworks.com/google-chrome-browser7.htm" target="_blank" rel="noopener noreferrer nofollow">https://computer.howstuffworks.com/google-chrome-browser7.htm</a>)</p>
+        <br/>
+        <h3>Back to 2020</h3>
+        So where were we? Right, playing untrusted video files with my browser via an HTML tag. This became a tiring mundane dance that I had to do too frequently as I watched more videos in the unending Lockdown. It also marred the experience as I was missing out on some valuable VLC player features (video subtitles, 400% volume, etc.).
+        <br/>
+        <br/>
+        In a bid to change that experience, I went ahead to just build up that plain HTML video tag into an actual browser video player with features similar to VLC.
+        <br/>
+        <br/>
+        <h3>Simple Video Player</h3>
+        <a href="https://simplevideoplayer.com" target="_blank" rel="noopener noreferrer">SimpleVideoPlayer.com</a> is an Open Source Video player that runs on the Browser. It strictly plays video files that exist on your local computer. It offers features similar to VLC such as amplified volume (you can increase volume to 400%), subtitle files (you can enable subtitles as you watch a video), keyboard controls (up and down for volume, etc.)
+        <br/>
+        <div>
+          <img src="/imgs/blog/simple-video-player-screenshot.png" width="70%">    
+        </div>
+        <br/>
+        Asides from the security benefit from Chrome’s Sandbox, here are some other points that I consider as security advantages to playing video files with your browser:
+        <br/>
+        1. If a video malware is crafted, it will most likely be crafted for popular native video players like VLC.
+        <br/>
+        2. If a malware is crafted to cut across board and affect all kinds of players (including browsers), you are likelier to have your browser updated in time with the latest patch update (because Chrome auto-updates after launch). I hardly update my VLC player (and I’ll think it’s same for most other people), once I install it, that same version remains on my machine till I get a new one.
+        <br/>
+        <br/>
+        After building SimpleVideoPlayer in 2020, I had intended to write this article about the motive that led to it, but I never got around taking out the necessary time to do some research and validate my theories, so it never happened. I knew the Sandbox provided some kind of isolation that protected you from exploits, but I wasn’t certain if my theory was wrong somewhere in the details — where the devil lies. I still am not certain actually; Just the other day, I was having an argument with ChatGPT on which is safer and it insisted it’s better to watch your videos with VLC (see screenshots below).
+        <br/>
+        <div>
+          <img src="/imgs/blog/chat-gpt-convo.png" width="70%">    
+        </div>
+        <br/>
+        <br/>
+        But at the same time there was this old <a href="https://news.ycombinator.com/item?id=14409123" target="_blank" rel="noopener noreferrer nofollow">hacker news thread</a> I found that specifically discussed the issue of VLC not emulating the chrome sandboxing approach after a <a href="https://news.ycombinator.com/item?id=14408859" target="_blank" rel="noopener noreferrer nofollow">VLC related vulnerability</a> was disclosed.
+        <br/>
+        <br/>
+        So let me know what you think about the debate - is it safer to watch videos on Chrome because of its Sandbox feature, or is it safer to watch a video on VLC because it is more optimised for video playing.
+        <br/>
+        <br/>
+
+        <div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+          this.page.url = "https://ifedapo.com/posts/play-in-the-chrome-sandbox";
+          this.page.identifier = "https://ifedapo.com/posts/play-in-the-chrome-sandbox";
+          };
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://ifedapo.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <img src="/imgs/ifedapo.png" class="profile-image" width="100px">
+      <h3>Ifedapo Olarewaju</h3>
+      <p>Software Engineer.</p>
+      <br/>
+      <p class="small-text">connect with me on social media</p>
+      <a href="https://github.com/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/github.png" width="30px"></a>
+      <a href="https://twitter.com/ifedapolarewaju" target="_blank" class="socio-account"><img src="/imgs/twitter.png" width="30px"></a>
+      <a href="https://linkedin.com/in/ifedapoolarewaju" target="_blank" class="socio-account"><img src="/imgs/linkedin.png" width="30px"></a>
+      <p>Or <a href="mailto:ifedapoolarewaju@gmail.com">send me a mail</a></p>
+    </div>
+
+    <footer>
+      &copy; 2016 - 2023 Ifedapo Olarewaju
+    </footer>
+  </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-98424856-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</html>
