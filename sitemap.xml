@@ -15,6 +15,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ifedapo.com/posts/top-5-alternatives-to-wiza</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://ifedapo.com/posts/top-5-alternatives-to-we-connect</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -86,6 +91,11 @@
   </url>
   <url>
     <loc>https://ifedapo.com/posts/data-vs-information</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ifedapo.com/posts/top-5-alternatives-to-mrdm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
